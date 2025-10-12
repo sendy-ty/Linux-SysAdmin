@@ -1,0 +1,98 @@
+Lab 4.1: killall and pkill :
+
+test case 
+- check connection process
+
+Tujuan:
+- Menjalankan script background process.
+- Menghentikan proses menggunakan kill, killall, dan pkill.
+- Memastikan hanya proses tertentu yang tetap berjalan.
+
+Persiapan:
+1. Login ke akun ADINUSA:
+   nusactl login
+
+2. Jalankan environment lab:
+   nusactl start linlab-004-1
+
+Langkah-langkah:
+
+1. Buat direktori lab4:
+   mkdir ~/lab4
+
+2. Buat file script bernama killing:
+   vim ~/lab4/killing
+
+   Isi script:
+   #!/bin/bash
+   while true; do
+     echo -n "$@ " >> ~/lab4/killing_outfile
+     sleep 5
+   done
+
+   Simpan file dengan:
+   Esc -> :wq -> Enter
+
+3. Ubah izin agar dapat dieksekusi:
+   chmod +x ~/lab4/killing
+
+4. Masuk ke direktori:
+   cd ~/lab4
+
+5. Jalankan tiga proses di background:
+   ./killing network &
+   ./killing interface &
+   ./killing connection &
+
+6. Periksa proses background:
+   jobs
+
+   Contoh hasil:
+   [1] Running   ./killing network &
+   [2] Running   ./killing interface &
+   [3] Running   ./killing connection &
+
+7. Jika ada proses Stopped, jalankan kembali:
+   bg 1
+   bg 2
+   bg 3
+
+8. Periksa semua proses aktif:
+   ps aux | grep killing
+   atau
+   pgrep -a killing
+
+Menghentikan proses:
+
+9. Stop proses network (pause sementara):
+   pkill -STOP -f "killing network"
+
+10. Terminate proses interface:
+    pkill -9 -f "killing interface"
+
+Verifikasi:
+
+11. Cek proses yang masih berjalan:
+    jobs
+    atau
+    ps aux | grep killing
+
+    Hasil yang benar:
+    - network   : Stopped
+    - interface : Terminated
+    - connection: Running
+
+12. Cek isi output file:
+    cat ~/lab4/killing_outfile
+
+    Output akan menampilkan kata "connection" setiap beberapa detik.
+
+Hasil Akhir:
+- Proses "network" dalam keadaan stopped.
+- Proses "interface" telah dihentikan.
+- Proses "connection" masih berjalan dan menulis ke file killing_outfile.
+
+Catatan:
+- Gunakan fg %1 untuk mengembalikan proses ke foreground.
+- Gunakan kill -l untuk melihat daftar sinyal.
+- pkill -f digunakan untuk mencari proses berdasarkan nama lengkap.
