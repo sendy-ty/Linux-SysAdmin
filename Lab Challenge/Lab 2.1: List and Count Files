@@ -5,7 +5,7 @@ Belajar cara:
 - Menghitung jumlah file berdasarkan pola nama menggunakan `wc -l`
 - Menulis hasil ke file teks menggunakan `echo` dan operator redirection (`>` dan `>>`)
 
-LANGKAH-LANGKAH SEDERHANA
+LANGKAH-LANGKAH
 
 1. Masuk ke direktori lab2
    cd ~/lab2
