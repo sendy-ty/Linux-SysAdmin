@@ -1,5 +1,9 @@
 Quiz 1 Configure Resource Limits :
 
+    => case 1 - check Maximum process [✓]
+    => case 2 - check Current limit [✓]
+    => case 3 - check Maximum limit [✓]
+
 1. Configure Resource Limits
 
 sudo nano vim /etc/security/limits.conf
