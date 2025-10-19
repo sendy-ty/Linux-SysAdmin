@@ -4,7 +4,8 @@ Quiz 1 Configure Resource Limits :
     => case 2 - check Current limit [✓]
     => case 3 - check Maximum limit [✓]
 
-1. Configure Resource Limits
+1. Configure Resource Limits 
+(membatasi sumber daya (resource) yang bisa digunakan oleh pengguna di server agar tidak berlebihan dan mengganggu sistem)
 
 sudo nano vim /etc/security/limits.conf
 
