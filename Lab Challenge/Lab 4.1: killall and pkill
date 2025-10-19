@@ -21,7 +21,7 @@ Langkah-langkah:
    mkdir ~/lab4
 
 2. Buat file script bernama killing:
-   vim ~/lab4/killing
+   vim ~/lab4/killing (akses pake user student)
 
    Isi script:
    #!/bin/bash
@@ -32,6 +32,7 @@ Langkah-langkah:
 
    Simpan file dengan:
    Esc -> :wq -> Enter
+   Esc -> :q! -> Enter
 
 3. Ubah izin agar dapat dieksekusi:
    chmod +x ~/lab4/killing
