@@ -17,6 +17,9 @@ sudo nano vim /etc/security/limits.conf
 @student    hard    nofile      3000
 @student    soft    nofile      2000
 
+sudo reboot (restart vm)
+Batas proses di atas harus dijalankan saat pengguna siswa masuk untuk pertama kalinya, misalnya: setelah melakukan boot ulang.
+
 3. Cek maksimum jumlah proses (nproc)
 ulimit -u
 20
