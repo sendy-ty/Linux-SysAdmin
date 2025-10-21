@@ -2,7 +2,7 @@
 
 1. Tools :
 - Virtual Box (NAT & Host Only)
-- Ubuntuserver (CPU 2, 2GB RAM)
+- Ubuntuserver (CPU 2, 4GB RAM)
 
 2. Konfigurasi Network :
 network:
